@@ -4,17 +4,29 @@
  * https://github.com/naptha/tesseract.js/
  *
  */
+const fs = require('fs');
 const Tesseract = require('tesseract.js');
+const program = require('commander');
 
-const image = './images/src/sample.png';
+program
+  .version('0.0.1')
+  .option('-i, --image [value]', 'image path')
+  .parse(process.argv);
 
-Tesseract.recognize(image, {
-  lang: 'jpn'
-})
-.progress((p) => {
-// console.log('p: ', p);
-})
-.then((res) => {
-  console.log('res: ', res.text);
-  process.exit(0);
+const image = program.image || './images/src/sample.png';
+
+fs.open(image, 'r', (err, fd) => {
+  if (err) {
+    console.error('Failed Open File');
+    process.exit(1);
+  }
+  Tesseract.recognize(image, {
+    lang: 'jpn'
+  }).progress((p) => {
+  // console.log('p: ', p);
+  }).then((res) => {
+    console.log('res: ', res.text);
+    process.exit(0);
+  });
 });
+

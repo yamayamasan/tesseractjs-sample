@@ -16,6 +16,7 @@ exports.exec = function (opt) {
   return easyimage.resize({
     src: `${srcDir}/${file}`,
     dst: `${dstDir}/${file}`,
-    width: width
+    width: width,
+    cropwidth: 100
   });
 };

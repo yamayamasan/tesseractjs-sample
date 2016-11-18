@@ -9,6 +9,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "commander": "^2.9.0",
     "easyimage": "^2.1.0",
     "tesseract.js": "^1.0.10"
   }

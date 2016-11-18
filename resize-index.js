@@ -8,7 +8,7 @@ const resize = require('./resize.js');
 const Tesseract = require('tesseract.js');
 
 const opts = {
-  width: 2000
+  width: 700
 };
 
 resize.exec(opts).then((image) => {
