@@ -10,7 +10,11 @@
   "license": "MIT",
   "dependencies": {
     "commander": "^2.9.0",
+    "diff": "^3.0.1",
     "easyimage": "^2.1.0",
     "tesseract.js": "^1.0.10"
+  },
+  "devDependencies": {
+    "colors": "^1.1.2"
   }
 }
